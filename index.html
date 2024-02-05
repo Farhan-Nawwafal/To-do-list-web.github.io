@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List Website</title>
+    <style>
+        /* pengaturan body */
+        body {
+            font-family: Gill Sans MT;
+            font-size: 20px;
+            background-image: url("bg-body.jpg");
+            color: white;
+        }
+        /* pengaturan judul utama */
+        .judul-utama {
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: underline;
+            color: red;
+        }   
+        
+        /* pengaturan text span */
+        p.penjelasan > span {
+            font-style: italic;
+        }
+
+        /* pengaturan list tugas */
+        div.list-tugas {
+            margin-left: 5px;
+        }
+
+        /* pengaturan jumlah tugas */
+        div.jumlah-tugas {
+            position: absolute;
+            bottom: 0;
+            text-transform: uppercase;
+        }
+        /* pengaturan button */
+        button {
+            border-radius: 50px;
+            padding: 10px;
+            position: absolute;
+            bottom: 100px;
+            cursor: pointer;
+            background-color: rgb(250, 46, 46);
+            font-weight: bold;
+            font-size: 15px;
+            text-transform: uppercase;
+            color:yellow;
+            outline: 2px dashed white; 
+            outline-offset: 3px;
+        }
+        button:hover {
+            background-color:teal;   
+            font-style: italic;
+        }
+
+        button.satu {
+            margin: 0;
+        }
+        
+        button.dua {
+           margin-left: 350px;     
+        }
+
+        button.tiga {
+           margin-left: 195px;     
+        }
+
+        /* pengaturan div tugas */
+        div.container-tugas {
+            border: 2px solid white;
+            display: flex;
+            flex-direction: row;
+        }
+
+        div.container-tugas > div.list-tugas {
+            border-right: 3px solid salmon;
+            margin-right: 20px;
+            padding-right: 30px;
+            box-sizing: border-box;
+            flex: 1;
+        }
+        
+        div.container-tugas > div.hapus-tugas {
+            border-right: 3px solid salmon;
+            margin-right: 20px;
+            padding-right: 30px;
+            box-sizing: border-box;
+            flex: 1;
+        }
+
+        div.container-tugas > div.selesai-tugas {
+            flex: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="judul-utama">My To Do List</h1>
+    
+    <p class="penjelasan">
+        Hallo, jadi di sini gua pengen buat web to-do-list menggunakan <span>HTML, CSS dan JavaScript</span> sederhana.
+    </p>
+    
+    <div class="container-tugas">
+
+        <div class="list-tugas">
+            <h3 class="tugas">Tugas Kamu :</h3>
+            <ul></ul>
+        </div>
+    
+        <div class="hapus-tugas">
+            <h3 class="list-hapus-tugas">Tugas Yang Dihapus : </h3>
+            <ul></ul>
+        </div>
+
+        <div class="selesai-tugas">
+            <h3 class="tugas-selesai">Tugas Yang Sudah Selesai :</h3>
+            <ul></ul>
+        </div>
+
+    </div>
+    
+    <div class="jumlah-tugas">
+        <p></p>
+    </div>
+
+    <button onclick="addTask()" class="satu">Tambahkan tugas</button>
+    <button onclick="removeTask()" class="tiga">Hapus Tugas</button>
+    <button onclick="clearTask()" class="dua">Tandai Selesai</button>
+    <script src="to-do-list-web.js"></script>
+</body>
+</html>
